@@ -1,0 +1,58 @@
+#!/usr/bin/env bash
+#MISE description="📥 Download and install tasks"
+#USAGE arg "<version>" help="Version of the tasks to download and install"
+#USAGE arg "<tasks>" help="List of tasks to download and install (comma separated)"
+#USAGE flag "-d --directory <directory>" help="Directory where tasks will be installed (default: shared-tasks)"
+
+## See <https://blog.ace-dev.me/posts/2025/04/how-we-use-mise-at-work-part-3/> for more details on how this task is used in our workflow.
+
+REPO_URL="git@github.com:jterral/my-mise-tasks.git"
+TMP_DIR=$(mktemp -d)
+TASK_DIR="${usage_directory:-shared-tasks}"
+TASKS=${usage_tasks}
+VERSION=${usage_version}
+
+# Info
+echo "========================================================================================================================"
+echo "Downloading tasks from $REPO_URL"
+echo "Repo version: $VERSION"
+echo "Installing tasks in $TASK_DIR"
+echo "Tasks to install: $TASKS"
+echo "========================================================================================================================"
+
+# Clean existing tasks
+if [ -d "$TASK_DIR" ]; then
+    echo "🧹 Cleaning tasks directory"
+    rm -rf "$TASK_DIR"
+fi
+
+# Create tasks directory
+echo "📁 Creating tasks directory"
+mkdir -p "$TASK_DIR"
+
+# Clone repo
+echo "📥 Cloning repository"
+git clone "$REPO_URL" "$TMP_DIR" --branch "$VERSION" --depth 1 > /dev/null 2>&1
+
+# Copy selected tasks
+IFS=',' read -r -a TASK_ARRAY <<< "$TASKS"
+
+for TASK in "${TASK_ARRAY[@]}"; do
+  if [ -d "$TMP_DIR/shared-tasks/$TASK" ]; then
+    cp -r "$TMP_DIR/shared-tasks/$TASK" "$TASK_DIR/"
+    echo "🖨️ Copied $TASK to $TASK_DIR"
+  else
+    echo "🚨 Directory $TASK does not exist in the repository."
+  fi
+done
+
+# Add .gitignore
+echo "🤷 Creating .gitignore file"
+cat <<EOF > "$TASK_DIR/.gitignore"
+*
+!.gitignore
+EOF
+
+# Cleanup
+echo "🧹 Cleaning temporary directory"
+rm -rf "$TMP_DIR"
