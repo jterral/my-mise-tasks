@@ -10,6 +10,7 @@ These instructions define how to fill out the pull request template file at [pul
 ## Required description
 
 - Always complete the "Description" section in the template.
+- Write the description as a list for easier reading.
 - Treat the "Description" content as the source of truth for summarizing changes.
 - Do not leave any "TODO" text or empty fields in this section.
 
