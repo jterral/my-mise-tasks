@@ -2,7 +2,7 @@
 #MISE description="Check prerequisites for pre-commit"
 #MISE hide=true
 
-set -e
+set -euo pipefail
 
 if ! command -v pre-commit &> /dev/null; then
     echo "❌ Pre-commit CLI is not installed"

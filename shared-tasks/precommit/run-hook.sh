@@ -3,7 +3,7 @@
 #USAGE flag "--hook <hook_name>" "Name of the pre-commit hook to run"
 #MISE depends=["precommit:check-prerequisites"]
 
-set -e
+set -euo pipefail
 
 if [ -z "$usage_hook" ]; then
   echo "❌ Error: --hook flag is required."
