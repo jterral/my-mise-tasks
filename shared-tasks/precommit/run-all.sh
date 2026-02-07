@@ -2,7 +2,7 @@
 #MISE description="Run all pre-commit tasks"
 #MISE depends=["precommit:check-prerequisites"]
 
-set -e
+set -euo pipefail
 
 echo "🔎 Running all pre-commit tasks..."
 

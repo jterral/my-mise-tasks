@@ -2,7 +2,7 @@
 #MISE description="Configure pre-commit hooks"
 #MISE depends=["precommit:check-prerequisites"]
 
-set -e
+set -euo pipefail
 
 echo "🔧 Configuring pre-commit hooks..."
 
