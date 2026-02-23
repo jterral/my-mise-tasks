@@ -5,7 +5,4 @@
 set -euo pipefail
 
 echo "🔧 Configuring pre-commit hooks..."
-
 pre-commit install
-
-echo "🟢 Pre-commit hooks configured."
