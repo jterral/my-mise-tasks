@@ -4,6 +4,4 @@
 
 set -euo pipefail
 
-echo "🔍 Getting current version using GitVersion..."
-
 gitversion -showvariable SemVer

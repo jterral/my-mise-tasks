@@ -12,6 +12,16 @@ Shared tasks for [mise-en-place](https://mise.jdx.dev/) so I can keep a single s
 
 ```txt
 tasks/
+├── docker/
+│   ├── README.md
+│   └── docker/
+│       ├── build.sh
+│       ├── check-prerequisites.sh
+│       ├── clean.sh
+│       ├── compose-down.sh
+│       ├── compose-up.sh
+│       ├── lint.sh
+│       └── run.sh
 ├── gitversion/
 │   ├── README.md
 │   └── gitversion/
@@ -40,6 +50,7 @@ Import only the task collections you need in your `mise.toml`:
 ```toml
 [task_config]
 includes = [
+    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/docker?ref=v2.0.0",
     "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/gitversion?ref=v2.0.0",
 ]
 ```
@@ -49,6 +60,7 @@ Or import multiple collections:
 ```toml
 [task_config]
 includes = [
+    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/docker?ref=v2.0.0",
     "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/gitversion?ref=v2.0.0",
     "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/precommit?ref=v2.0.0",
 ]
@@ -58,6 +70,8 @@ Tasks are automatically namespaced by folder:
 
 ```bash
 mise task run gitversion:current
+mise task run docker:clean
+mise task run docker:compose:lint
 mise task run precommit:configure
 ```
 
@@ -65,8 +79,9 @@ mise task run precommit:configure
 
 - `gitversion`: see [tasks/gitversion/README.md](tasks/gitversion/README.md)
 - `precommit`: see [tasks/precommit/README.md](tasks/precommit/README.md)
+- `docker`: see [tasks/docker/README.md](tasks/docker/README.md)
 
-For details, see the official mise docs: https://mise.jdx.dev/tasks/
+For details, see the official mise docs: <https://mise.jdx.dev/tasks/>
 
 ## 🤝 Contributing
 

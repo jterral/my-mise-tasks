@@ -4,5 +4,4 @@
 
 set -euo pipefail
 
-echo "🔎 Running all pre-commit tasks..."
 pre-commit run --all-files
