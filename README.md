@@ -10,24 +10,70 @@ Shared tasks for [mise-en-place](https://mise.jdx.dev/) so I can keep a single s
 
 ## 🗂️ Structure
 
-- `shared-tasks/`: task definitions used by projects that import this repo.
+```txt
+tasks/
+├── gitversion/
+│   ├── README.md
+│   └── gitversion/
+│       ├── check-prerequisites.sh
+│       └── current.sh
+├── precommit/
+│   ├── README.md
+│   └── precommit/
+│       ├── check-prerequisites.sh
+│       ├── configure.sh
+│       ├── run-all.sh
+│       ├── run-hook.sh
+│       ├── uninstall.sh
+│       └── update.sh
+└── ...
+```
+
+Each task folder is independently importable. The nested folder structure (e.g., `gitversion/gitversion/`) allows tasks to be automatically namespaced by the parent folder name (e.g., `gitversion:current`).
 
 ## 🚀 Usage
 
-1. Add this repository as a task source in your `mise.toml`.
-2. Run tasks with `mise task run <task-name>`.
+### For Projects Importing Specific Task Collections
+
+Import only the task collections you need in your `mise.toml`:
+
+```toml
+[task_config]
+includes = [
+    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/gitversion?ref=v2.0.0",
+]
+```
+
+Or import multiple collections:
+
+```toml
+[task_config]
+includes = [
+    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/gitversion?ref=v2.0.0",
+    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/precommit?ref=v2.0.0",
+]
+```
+
+Tasks are automatically namespaced by folder:
+
+```bash
+mise task run gitversion:current
+mise task run precommit:configure
+```
+
+### Available Tasks
+
+- `gitversion`: see [tasks/gitversion/README.md](tasks/gitversion/README.md)
+- `precommit`: see [tasks/precommit/README.md](tasks/precommit/README.md)
 
 For details, see the official mise docs: https://mise.jdx.dev/tasks/
 
 ## 🤝 Contributing
 
-- Add or update tasks in `shared-tasks/`.
+- Add or update tasks in `tasks/` under the appropriate task collection folder.
 - Keep tasks small, focused, and well-named.
 - Document any required inputs or environment variables in the task itself.
-
-## 🙏 Acknowledgments
-
-Thanks to [this blog post](https://blog.ace-dev.me/posts/2025/04/how-we-use-mise-at-work-part-3/) for the `download-tasks` script used to share tasks across projects.
+- Update the corresponding task collection's `README.md` when adding new tasks.
 
 ## 🔑 License
 

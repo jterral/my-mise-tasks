@@ -7,7 +7,7 @@ pre-commit = { version = "4.5" }
 python = { version = "3.14" }
 
 [task_config]
-includes = ["shared-tasks"]
+includes = ["tasks/gitversion", "tasks/precommit"]
 
 [tasks.info]
 description = "Print project information"
