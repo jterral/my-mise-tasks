@@ -4,5 +4,4 @@
 
 set -euo pipefail
 
-echo "🧹 Uninstalling all pre-commit hooks..."
 pre-commit uninstall

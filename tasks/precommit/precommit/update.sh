@@ -4,5 +4,4 @@
 
 set -euo pipefail
 
-echo "🔄 Updating pre-commit hooks..."
 pre-commit autoupdate
