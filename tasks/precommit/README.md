@@ -11,6 +11,17 @@ Tasks for managing [pre-commit](https://pre-commit.com/) hooks in your project.
 - `precommit:uninstall` - Remove pre-commit hooks from the repository
 - `precommit:update` - Update all pre-commit hooks to their latest versions
 
+## Including in Your Project
+
+To include these tasks in your project, add the following to your `mise.toml`:
+
+```toml
+[task_config]
+includes = [
+    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/precommit",
+]
+```
+
 ## Usage
 
 When imported via the main repository:
