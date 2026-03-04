@@ -27,7 +27,7 @@ includes = [
 When imported via the main repository:
 
 ```bash
-mise task run precommit:configure
+mise task run precommit:install
 mise task run precommit:run-all
 mise task run precommit:update
 ```

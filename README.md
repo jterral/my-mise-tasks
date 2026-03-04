@@ -15,27 +15,21 @@ tasks/
 ├── docker/
 │   ├── README.md
 │   └── docker/
-│       ├── build.sh
 │       ├── check-prerequisites.sh
-│       ├── clean.sh
-│       ├── compose-down.sh
-│       ├── compose-up.sh
-│       ├── lint.sh
-│       └── run.sh
+│       ├── *.sh
+│       └── compose/
+│           ├── check-prerequisites.sh
+│           └── *.sh
 ├── gitversion/
 │   ├── README.md
 │   └── gitversion/
 │       ├── check-prerequisites.sh
-│       └── current.sh
+│       └── *.sh
 ├── precommit/
 │   ├── README.md
 │   └── precommit/
 │       ├── check-prerequisites.sh
-│       ├── configure.sh
-│       ├── run-all.sh
-│       ├── run-hook.sh
-│       ├── uninstall.sh
-│       └── update.sh
+│       └── *.sh
 └── ...
 ```
 
