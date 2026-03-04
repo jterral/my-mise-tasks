@@ -44,19 +44,9 @@ Import only the task collections you need in your `mise.toml`:
 ```toml
 [task_config]
 includes = [
-    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/docker?ref=v2.0.0",
-    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/gitversion?ref=v2.0.0",
-]
-```
-
-Or import multiple collections:
-
-```toml
-[task_config]
-includes = [
-    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/docker?ref=v2.0.0",
-    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/gitversion?ref=v2.0.0",
-    "git::ssh://git@github.com/myorg/shared-tasks.git//tasks/precommit?ref=v2.0.0",
+    "git::ssh://git@github.com/jterral/my-mise-tasks.git//tasks/docker?ref=v2.0.0",
+    "git::ssh://git@github.com/jterral/my-mise-tasks.git//tasks/gitversion?ref=v2.0.0",
+    "git::ssh://git@github.com/jterral/my-mise-tasks.git//tasks/precommit?ref=v2.0.0",
 ]
 ```
 
