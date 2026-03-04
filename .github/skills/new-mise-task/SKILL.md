@@ -46,15 +46,21 @@ Your task collection should include:
    - Keep them small and focused.
    - Prefer one action per script (e.g., `install.sh`, `configure.sh`).
 
-4. **Document the task in `README.md`**
+4. **Add executable permissions** to your scripts:
+
+   ```bash
+   chmod +x tasks/<task-name>/<task-name>/*.sh
+   ```
+
+5. **Document the task in `README.md`**
    - Explain the purpose.
    - List available tasks and usage examples.
    - Note required inputs or env vars.
 
-5. **Update the root README if needed**
+6. **Update the root README if needed**
    - Add your task collection to "Available Tasks" if it's new.
 
-6. **Update the root `mise.toml`**
+7. **Update the root `mise.toml`**
    - Add your task collection to the `includes` array under `[task_config]`.
 
 ## 🧪 Recommended Conventions
