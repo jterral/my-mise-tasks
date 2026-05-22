@@ -2,7 +2,7 @@
 PROJECT_NAME = "my-mise-tasks"
 
 [tools]
-gitversion = "6.5.1"
+gitversion = "6.5"
 python = "3.14"
 "pipx:pre-commit" = "4.6"
 
