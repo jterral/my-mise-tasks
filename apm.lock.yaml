@@ -1,0 +1,61 @@
+lockfile_version: '1'
+generated_at: '2026-05-22T09:22:04.679336+00:00'
+apm_version: 0.14.0
+dependencies:
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: 5b049e4e196c10aab8ddfd9e492323d08cf985b0
+  virtual_path: instructions/caveman-mode.instructions.md
+  is_virtual: true
+  deployed_files:
+  - .claude/rules/caveman-mode.md
+  deployed_file_hashes:
+    .claude/rules/caveman-mode.md: sha256:a1ebc75e6cfab8e0b8cb25887f1856a1a5e2d5d161e8ee5905b126473d3b2ce6
+  content_hash: sha256:55a6e3df1f84607749c2ea2e20cded5654a2db58287f6da1e033fa38a16bec0f
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: 5b049e4e196c10aab8ddfd9e492323d08cf985b0
+  virtual_path: instructions/code-review-generic.instructions.md
+  is_virtual: true
+  deployed_files:
+  - .claude/rules/code-review-generic.md
+  deployed_file_hashes:
+    .claude/rules/code-review-generic.md: sha256:a268d8525c641834e8b1eca79f4549a3b1e0c50d4cddce9bf909c021c32b2d86
+  content_hash: sha256:afd1484a4f85894e72e2608d36a1ea4b05a1c1fac3a876564eafa0c6cce66034
+- repo_url: github/awesome-copilot
+  host: github.com
+  resolved_commit: 5b049e4e196c10aab8ddfd9e492323d08cf985b0
+  virtual_path: instructions/shell.instructions.md
+  is_virtual: true
+  deployed_files:
+  - .claude/rules/shell.md
+  deployed_file_hashes:
+    .claude/rules/shell.md: sha256:3660c18cbd7883b692f45c40f9dd199827e598029bf50d619c8b8faa88a526c4
+  content_hash: sha256:ff0779cb9266e8da6e30f146fc92b54a0fc7b70eade491803b1471d71c2ca665
+- repo_url: jterral/copilot-playbook
+  host: github.com
+  resolved_commit: d387f512fc8f2b9d8b17afd36389fbe0a157b574
+  virtual_path: skills/git-conventional-commit
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/git-conventional-commit
+  content_hash: sha256:f319e540617d64afb6776b223c32cfb2072241011f9bfa03bcfd62bbd93b5309
+- repo_url: jterral/copilot-playbook
+  host: github.com
+  resolved_commit: d387f512fc8f2b9d8b17afd36389fbe0a157b574
+  virtual_path: skills/git-pull-request
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/git-pull-request
+  content_hash: sha256:3141b33f7e5cb632d2084b3165d9c4b10e440e3f985b47674f7927c588bf54e4
+- repo_url: multica-ai/andrej-karpathy-skills
+  host: github.com
+  resolved_commit: 2c606141936f1eeef17fa3043a72095b4765b9c2
+  virtual_path: skills/karpathy-guidelines
+  is_virtual: true
+  package_type: claude_skill
+  deployed_files:
+  - .claude/skills/karpathy-guidelines
+  content_hash: sha256:41e8ca055bbde13d240776a14a076a59614057200340c243130a76ba4e64cac8

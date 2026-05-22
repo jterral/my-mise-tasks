@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 #MISE description="Check prerequisites for pre-commit"
+#MISE quiet=true
 #MISE hide=true
 
 set -euo pipefail
