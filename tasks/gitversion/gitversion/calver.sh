@@ -4,9 +4,8 @@
 
 set -euo pipefail
 
-calver=$(date +'%y.%U')
-minor=$(git tag -l "${calver}.*" | sort -V | wc -l)
+calver=$(date +'%y.%V')
+minor=$(git tag -l "${calver}.*" | wc -l)
 tag="${calver}.${minor}"
 
-mise set CALVER="$tag"
-echo "\$CALVER=$CALVER"
+echo "$tag"
