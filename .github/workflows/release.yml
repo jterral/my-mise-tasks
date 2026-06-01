@@ -33,7 +33,8 @@ jobs:
         with:
           tag_name: "v${{ steps.version_step.outputs.GitVersion_SemVer }}"
 
-      - name: 🏷️ Tag major release
-        uses: softprops/action-gh-release@v3
-        with:
-          tag_name: "v${{ steps.version_step.outputs.GitVersion_Major }}"
+      - name: 🔖 Update major version tag
+        run: |
+          MAJOR="v${{ steps.version_step.outputs.GitVersion_Major }}"
+          git tag -f "$MAJOR"
+          git push origin "$MAJOR" --force
