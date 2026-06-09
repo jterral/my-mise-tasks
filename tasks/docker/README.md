@@ -2,6 +2,12 @@
 
 Tasks for common Docker workflows using Docker CLI and Docker Compose v2.
 
+## Requirements
+
+- Docker CLI must be installed and available in PATH
+- Docker Compose v2 plugin must be available via `docker compose`
+- A project Dockerfile and/or Compose file must exist for related tasks
+
 ## Available Tasks
 
 - `docker:check-prerequisites` - Verify that Docker CLI and Docker Compose v2 are available
@@ -35,9 +41,3 @@ mise task run docker:compose-down
 mise task run docker:lint
 mise task run docker:clean --force
 ```
-
-## Requirements
-
-- Docker CLI must be installed and available in PATH
-- Docker Compose v2 plugin must be available via `docker compose`
-- A project Dockerfile and/or Compose file must exist for related tasks

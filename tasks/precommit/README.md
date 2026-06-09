@@ -2,6 +2,12 @@
 
 Tasks for managing [pre-commit](https://pre-commit.com/) hooks in your project.
 
+## Requirements
+
+- Python 3.9+ must be installed
+- pre-commit must be installed (`pip install pre-commit`)
+- A `.pre-commit-config.yaml` file must exist in the repository root
+
 ## Available Tasks
 
 - `precommit:check-prerequisites` - Verify that pre-commit is properly installed
@@ -31,9 +37,3 @@ mise task run precommit:install
 mise task run precommit:run-all
 mise task run precommit:update
 ```
-
-## Requirements
-
-- Python 3.9+ must be installed
-- pre-commit must be installed (`pip install pre-commit`)
-- A `.pre-commit-config.yaml` file must exist in the repository root
