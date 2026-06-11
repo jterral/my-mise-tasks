@@ -2,6 +2,11 @@
 
 Tasks for managing version information using [GitVersion](https://gitversion.net/).
 
+## Requirements
+
+- GitVersion must be installed and available in PATH
+- The repository must be a git repository with proper git history
+
 ## Available Tasks
 
 - `gitversion:check-prerequisites` - Verify that GitVersion is properly installed and configured
@@ -26,8 +31,3 @@ When imported via the main repository:
 mise task run gitversion:check-prerequisites
 mise task run gitversion:current
 ```
-
-## Requirements
-
-- GitVersion must be installed and available in PATH
-- The repository must be a git repository with proper git history
