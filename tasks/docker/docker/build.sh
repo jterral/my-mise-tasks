@@ -8,9 +8,9 @@
 
 set -euo pipefail
 
-IMAGE_NAME="${usage_image:?}"
-TAG="${usage_tag?}"
-DOCKERFILE_PATH="${usage_file?}"
-BUILD_CONTEXT="${usage_context?}"
+IMAGE_NAME="${usage_image?}"
+TAG="${usage_tag:-latest}"
+DOCKERFILE_PATH="${usage_file:-Dockerfile}"
+BUILD_CONTEXT="${usage_context:-.}"
 
-docker build -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME:$TAGg" "$BUILD_CONTEXT"
+docker build -f "$DOCKERFILE_PATH" -t "$IMAGE_NAME:$TAG" "$BUILD_CONTEXT"
